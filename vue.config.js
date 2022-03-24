@@ -24,14 +24,16 @@ module.exports = defineConfig({
   },
   devServer: {
     open:true,
-    proxy: {
-      '/api': {
-        target: 'http://192.168.110.66:8089',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
-    }
+    host:'localhost',
+    port:9527
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://192.168.110.66:8089',
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // }
   }
 })
