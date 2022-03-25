@@ -21,10 +21,12 @@ module.exports = defineConfig({
       .set('@cp', resolve('src/components'))
       .set('@service', resolve('src/service'))
     config.module.rules.delete('eslint');
+    config.plugin('html').tap(args=>{
+      args[0].title = '首页'
+      return args
+    })
   },
   devServer: {
-    open:true,
-    host:'localhost',
     port:9527
     // proxy: {
     //   '/api': {
